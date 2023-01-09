@@ -16,6 +16,10 @@ body,html {
     height: 2rem;
 }
 
+.tomorrow_task_submit {
+    height: 2rem;
+}
+
 #table {
     background-color:papayawhip;
     width: 50%;
