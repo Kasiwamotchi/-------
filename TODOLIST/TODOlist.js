@@ -40,14 +40,17 @@ taskSubmit.addEventListener('click', evt => {
   const tomorrow_addTasks = (tomorrowTask) => {
 // 入力したタスクを追加・表示
     const tomorrowListItem = document.createElement('li');
+    const tomorrowInput = document.createElement('input');
     const tomorrowShowItem = tomorrowTaskList.appendChild(tomorrowListItem);
+    const tomorrowInputItem = tomorrowTaskList.appendChild(tomorrowInput);
     tomorrowShowItem.innerHTML = tomorrowTask;
+    tomorrowInputItem.innerHTML = tomorrowTask;
 
       // タスクに削除ボタンを付与
     const tomorrowdeleteButton = document.createElement('button');
     tomorrowdeleteButton.innerHTML = 'Delete';
     tomorrowListItem.appendChild(tomorrowdeleteButton);
-
+    
       // 削除ボタンをクリックし、イベントを発動（タスクが削除）
 
     tomorrowdeleteButton.addEventListener('click', evt => {
@@ -77,3 +80,6 @@ taskSubmit.addEventListener('click', evt => {
 //const tomorrow_memo =document.createElement('input');
 //tomorrow_addTasks.appendChild(tomorrow_memo);
 //tomorrow_showItem.innerHTML = tomorrow_memo;
+
+//
+//deleteは他のとに混ぜてしまう
