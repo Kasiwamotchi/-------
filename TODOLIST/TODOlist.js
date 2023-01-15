@@ -9,7 +9,12 @@ const addTasks = (task) => {
   // 入力したタスクを追加・表示
   const listItem = document.createElement('li');
   const showItem = taskList.appendChild(listItem);
+  const Input = document.createElement('input');
+  Input.type = 'text';
+  Input.placeholder = 'メモ';
+  const inputItem = taskList.appendChild(Input);
   showItem.innerHTML = task;
+  inputItem.innerHTML = task;
 
   // タスクに削除ボタンを付与
   const deleteButton = document.createElement('button');
@@ -41,6 +46,8 @@ taskSubmit.addEventListener('click', evt => {
 // 入力したタスクを追加・表示
     const tomorrowListItem = document.createElement('li');
     const tomorrowInput = document.createElement('input');
+    tomorrowInput.type = 'text';
+    tomorrowInput.placeholder = 'メモ';
     const tomorrowShowItem = tomorrowTaskList.appendChild(tomorrowListItem);
     const tomorrowInputItem = tomorrowTaskList.appendChild(tomorrowInput);
     tomorrowShowItem.innerHTML = tomorrowTask;
@@ -50,7 +57,7 @@ taskSubmit.addEventListener('click', evt => {
     const tomorrowdeleteButton = document.createElement('button');
     tomorrowdeleteButton.innerHTML = 'Delete';
     tomorrowListItem.appendChild(tomorrowdeleteButton);
-    
+
       // 削除ボタンをクリックし、イベントを発動（タスクが削除）
 
     tomorrowdeleteButton.addEventListener('click', evt => {
@@ -65,6 +72,7 @@ taskSubmit.addEventListener('click', evt => {
   const tomorrowdeleteTasks = (tomorrowdeleteButton) => {
     const tomorrowTasks = tomorrowdeleteButton.closest('li');
     tomorrowTaskList.removeChild(tomorrowTasks);
+
   };
 
   // 追加ボタンをクリックし、イベントを発動（タスクが追加）
@@ -73,13 +81,4 @@ taskSubmit.addEventListener('click', evt => {
     const tomorrowTask = taskValue.value;
     tomorrow_addTasks(tomorrowTask);
     taskValue.value = '';
-
-  });
-
-  //メモ追加.
-//const tomorrow_memo =document.createElement('input');
-//tomorrow_addTasks.appendChild(tomorrow_memo);
-//tomorrow_showItem.innerHTML = tomorrow_memo;
-
-//
-//deleteは他のとに混ぜてしまう
+});
