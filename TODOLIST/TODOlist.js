@@ -25,6 +25,7 @@ const addTasks = (task) => {
   deleteButton.addEventListener('click', evt => {
     evt.preventDefault();
     deleteTasks(deleteButton);
+    Input.parentNode.removeChild(inputItem);
   });
 };
 
@@ -63,6 +64,7 @@ taskSubmit.addEventListener('click', evt => {
     tomorrowdeleteButton.addEventListener('click', evt => {
     evt.preventDefault();
     tomorrowdeleteTasks(tomorrowdeleteButton);
+    tomorrowInput.parentNode.removeChild(tomorrowInputItem);
     });
 
   };
